@@ -18,6 +18,7 @@ package com.example.android.bluetoothadvertisements;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -133,6 +134,7 @@ public class ScannerFragment extends ListFragment {
         // Start nodle.
         try {
             Context context = getActivity().getApplicationContext();
+            getPref(context, "");
             //nodle.stop(context);
             //Nodle().config(context, "ble.scan.duration-msec", 50000);
             //Nodle().config(context, "ble.scan.interval-msec", 8000);
@@ -149,6 +151,18 @@ public class ScannerFragment extends ListFragment {
                 + TimeUnit.SECONDS.convert(SCAN_PERIOD, TimeUnit.MILLISECONDS) + " "
                 + getString(R.string.seconds);
         Toast.makeText(getActivity(), toastText, Toast.LENGTH_LONG).show();
+    }
+
+    public static void setPref(Context context, String config) {
+        SharedPreferences.Editor pref = context.getSharedPreferences("NODLE_SDK_PREFS", Context.MODE_PRIVATE).edit();
+        pref.putString("PREF_PARAM_CONFIG", config);
+        pref.apply();
+    }
+
+    public static void getPref(Context context, String config) {
+        SharedPreferences sharedPref = context.getSharedPreferences("NODLE_SDK_PREFS", Context.MODE_PRIVATE);
+        String defaultValue = sharedPref.getString("PREF_PARAM_CONFIG", "");
+        Log.d(TAG, "PREF_PARAM_CONFIG: " + defaultValue);
     }
 
     /**

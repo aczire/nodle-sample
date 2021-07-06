@@ -46,6 +46,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(R.string.activity_main_title);
+        Log.d(TAG, "Finding nearby devices.");
 
         RealRxPermission.getInstance(this)
                 .requestEach(
