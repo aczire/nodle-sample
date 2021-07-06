@@ -1,9 +1,0 @@
-com/example/android/bluetoothadvertisements/MainActivity.java
- com.example.android.bluetoothadvertisements.MainActivity
-com/example/android/bluetoothadvertisements/Constants.java
- com.example.android.bluetoothadvertisements.Constants
-com/example/android/bluetoothadvertisements/ScannerFragment.java
- com.example.android.bluetoothadvertisements.ScannerFragment
- com.example.android.bluetoothadvertisements.ScannerFragment$1
-com/example/android/bluetoothadvertisements/BuildConfig.java
- com.example.android.bluetoothadvertisements.BuildConfig
